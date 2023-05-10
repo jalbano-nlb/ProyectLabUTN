@@ -1,0 +1,102 @@
+/* Estilos para el formulario de inicio de sesión */
+
+body {
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #263339;
+  background-color: #cdfaf6;
+  background-image: url(./logo_utn.png);
+  background-size: contain;
+  background-blend-mode: hard-light;
+}
+
+form {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 15%;
+  margin-left: 30%;
+  max-width: 37%;
+  padding: 20px;
+  background-color: rgba(161, 161, 161, .3);
+  border-radius: 5px;
+  width: 35%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1.5px solid rgba(219, 213, 209, 0.3);
+}
+
+form h1 {
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+form h2 {
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  font-size: large;
+  text-align: center;
+}
+
+.header-login{
+  background-color: rgba(38, 166, 154, .6);
+  border-radius: 1rem;
+  padding: .3rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: large;
+  color: #263339;
+}
+
+form div {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+.btn-login{
+  color: rgba(38, 166, 154, .9);
+  border: 1px solid rgba(38, 166, 154, .9);
+  padding: .8rem;
+  background-color: #FFFFFF;
+  border-radius: .25rem;
+  width: 100%;
+  font-size: x-large;
+}
+.btn-login:hover {
+  background-color: rgba(38, 166, 154, .9);
+  color:#FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
