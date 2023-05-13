@@ -30,10 +30,8 @@ body {
 nav {
   display: inline-block;
   margin:0%;
-  width: 99%;
-  margin: 0.5rem;
+  width: 100%;
   background-color: #80CBC4;
-  border-radius: 1rem;
 }
 
 a{
@@ -48,13 +46,13 @@ a{
   border: 0px;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  transition: background-color 0.2s ease;
+  border-radius: 1rem;  
 }
 
 .btn-nav a:hover{
   cursor: pointer;
   color: #FFFFFF;
+  transition-duration: 600ms;
 }
 
 
