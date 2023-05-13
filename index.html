@@ -10,25 +10,41 @@
 </head>
 <body>
   <nav>
-      <button class="btn-nav"><a href="#news"><i class="fa-solid fa-house"></i> &nbsp;Inicio</a></button>
-      <button class="btn-nav"><a href="#requisitos">Requisitos</a></button>
-      <button class="btn-nav"><a href="#">Carreras</a></button>
-      <button class="btn-nav"><a href="#contacto">Contacto</a></button>
-      <button class="btn-nav btn-login"><a href="login.html"> <i class="fa-solid fa-user"></i> Ingresar</a></button>
+      <button id="btnNews" class="btn-nav btn-news"><a href="#news"><i class="fa-solid fa-house"></i></a></button>
+      <button id="btnReq" class="btn-nav"><a href="#requisitos">Requisitos</a></button>
+      <button id="btnCarr" class="btn-nav"><a href="#">Carreras</a></button>
+      <button id="btnCont" class="btn-nav"><a href="#contacto">Contacto</a></button>
+      <button id="btnLogin" class="btn-nav btn-login"><a href="login2.html"> <i class="fa-solid fa-user"></i> <p style="display: inherit;">Ingresar</p></a></button>
   </nav>
   
   <section id="news">
     <h1>Tecnicatura Universitaria en Programación</h1>
     <div style="width: 100%; display: flex;">
-      <div style="width: 49%; margin-right: 1%;">
+      <div  class="info-noticias">
         <p>La Tecnicatura Universitaria en Programación de la UTN FRD forma profesionales capaces de analizar, diseñar, desarrollar, implementar y mantener sistemas de software, utilizando las últimas tecnologías del mercado y siguiendo las mejores prácticas de la industria.</p>
         <p>La carrera tiene una duración de dos años y se cursa de manera presencial en "C.G.C" - Centro de Gestion y Conocimiento. Entre las materias que se dictan se encuentran:</p>
       </div>
-      <div style="width: 50%;">
+      <div class="img-noticias">
         <img src="img/Técnico-Superior-en-Programación.jpg" alt="" width="100%">
       </div>
+      <!-- <div class="primer-ano">
+        <div class="img-1cuat">
+          <img src="img/1cuat.png" alt="" width="100%">
+        </div>
+        <div class="img-2cuat">
+          <img src="img/2cuat.png" alt="" width="100%">
+        </div>
+      </div>
+      <div class="segundo-ano">
+        <div class="img-3cuat">
+          <img src="img/3cuat.png" alt="" width="100%">
+        </div>
+        <div class="img-4cuat">
+          <img src="img/4cuat.png" alt="" width="100%">
+        </div>
+      </div> -->
     </div>
-    <div style="width: 100%; display: flex;">
+    <div class="footer-noticias">
       <img src="./logo_utn.png" alt="" width="10%">
     </div>
   </section>
