@@ -15,7 +15,7 @@ formulario.addEventListener('submit', function(event) {
     let _typeVal = this.tipo;
     let location = window.location.host;
     
-    fetch('dashboards/alumnosDash.html', {
+    fetch('/dashboards/alumnosDash.html', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ formulario.addEventListener('submit', function(event) {
       })
       .then(function(response) {
         console.log("response: ", response)
-        window.location.href = 'http://'+ window.location.host + 'dashboards/alumnosDash.html';
+        window.location.href = 'http://'+ window.location.host + '/dashboards/alumnosDash.html';
         console.log('Enviada correctamente');
       })
       .catch(function(error) {
