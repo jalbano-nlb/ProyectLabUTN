@@ -12,10 +12,10 @@ formulario.addEventListener('submit', function(event) {
     
     let _userVal = document.getElementById('username').value;
     let _pwVal = btoa(document.getElementById('pwd').value); // decodear con atob
-    let _typeVal = this.tipo;
+    let _typeVal = tipo;
     let location = window.location.host;
     
-    fetch('/dashboards/alumnosDash.html', {
+    fetch('../dashboards/alumnosDash.html', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
