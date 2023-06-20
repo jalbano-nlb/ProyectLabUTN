@@ -1,7 +1,7 @@
 const usuarios = [
-    {username: 'jalbano', password: '2323', tipo: 1},
-    {username: 'ivalerio', password: '2323', tipo: 1},
-    {username: 'mbonu', password: '2323', tipo: 2},
+    {username: 'jalbano', password: '2323', apellidoNombre: 'Albano, Joaquín', tipo: 1},
+    {username: 'ivalerio', password: '2323', apellidoNombre: 'Valerio, Ignacio', tipo: 1},
+    {username: 'mbonu', password: '2323', apellidoNombre: 'Bonuccelli, Martín', tipo: 2},
 ];
 
 function validarUsuarioPw(){
@@ -19,15 +19,19 @@ function validarUsuarioPw(){
             _user = u.username;
             _pw = u.password;
             _tipo = u.tipo;
+            _apeNom = u.apellidoNombre;
+            
+            sessionStorage.setItem('usr', _user);
+            sessionStorage.setItem('pwd', _pw);
+            sessionStorage.setItem('type', _tipo);
+            sessionStorage.setItem('apellidoNombre', _apeNom);
+            return;
         }
     });
 
     if(!validaOK){
         alert('Usuario o contraseña incorrectos');
     }else{
-        sessionStorage.setItem('usr', _user);
-        sessionStorage.setItem('pwd', _pw);
-        sessionStorage.setItem('type', _tipo);
         login(_tipo);
     }
 }
