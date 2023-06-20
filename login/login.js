@@ -37,7 +37,7 @@ function login(type){
     if (type == 1){
         var urlRedireccion = '/dashboards/alumnos/alumnosDash.html'
     }else if (type ==2){
-        var urlRedireccion = '/dashboards/alumnos/alumnosDash.html'
+        var urlRedireccion = '/dashboards/profesores/profesoresDash.html'
     }
 
     window.location.href = urlRedireccion;
