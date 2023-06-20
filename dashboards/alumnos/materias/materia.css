@@ -14,7 +14,7 @@ body {
 
 .header {
     background-color: #80CBC4;
-    padding: 1.5rem;
+    padding: 0.5px 1.5rem 0.5rem 1.5rem;
     text-align: center;
 }
 
@@ -22,6 +22,9 @@ body {
     color: #fff;
     font-size: 2rem;
     margin: 0;
+}
+.header span {
+    color: #728f9e;
 }
 
 nav {
@@ -54,104 +57,74 @@ nav {
     transition-duration: 600ms;
 }
 
-main section {
-    min-height: 28rem;
-    margin: 2rem;
-    padding: 2rem;
-    background-color: #D0EBEA;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-main section h2 {
-    color: #26A69A;
-    margin-bottom: 1rem;
-    font-size: larger;
-}
-
-.info-noticias {
-    width: 49%;
-    margin-right: 1%;
-}
-
-.img-noticias {
-    width: 50%;
-}
-
-.footer-noticias {
-    width: 100%;
-    display: flex;
-}
-
-main section p {
-    color: #728f9e;
-}
-
-main article {
-    min-height: 25rem;
-    margin: 2rem;
-    padding: 2rem;
-    background-color: #D0EBEA;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-left: 1rem solid #26A69A;
-}
-
-main article h3 {
-    color: #26A69A;
-    margin-top: 0;
-}
-
-main article {
-    color: #728f9e;
-}
-
-main .card-container {
+/* Estilos personalizados */
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-main .card {
-    margin: 10px;
-}
-
-main .calendar {
-    margin-top: 2rem;
-    background-color: #D0EBEA;
+    align-items: flex-start;
+    background-color: #cdfaf6;
     padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main .calendar h2 {
+.column {
+    /* flex-basis: 50rem; */
+    margin: 1rem;
+    background-color: #D0EBEA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+.infoNotas{
+    flex-basis: 10rem;
+}
+.infoCont{
+    flex-basis: 10rem;
+}
+.infoAct{
+    flex-basis: 40rem;
+}
+
+.column h2 {
     color: #26A69A;
     margin-bottom: 1rem;
     font-size: larger;
 }
 
-main .event-list {
+.column p {
+    color: #728f9e;
+}
+
+.column ul {
     list-style: none;
     padding: 0;
 }
 
-main .event {
+.column li {
+    margin-bottom: 0.5rem;
+}
+
+.column.contact {
+    background-color: #80CBC4;
+    color: #fff;
+    text-align: center;
+}
+
+.column.contact ul {
+    margin: 0;
+    padding: 0;
+}
+
+.column.contact li {
     margin-bottom: 1rem;
 }
 
-main .event-date {
-    color: #408d86;
-    font-weight: bold;
+.column.contact a {
+    color: #fff;
+    text-decoration: none;
 }
 
-main .event-title {
-    color: #263339;
-}
-
-main .event-countdown {
-    display: inline-block;
-    font-weight: bold;
-    color: #263339;
-    background-color: #D0EBEA;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+.column.contact a:hover {
+    text-decoration: underline;
 }
 
 footer {
