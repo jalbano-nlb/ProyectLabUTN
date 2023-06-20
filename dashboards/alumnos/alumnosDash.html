@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dashboards/alumnos/AlumnosDash.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <title>Document</title>
 </head>
+
 <body>
   <header class="header">
-    <h1>Ignacio Valentin Valerio</h1>
+    <h1 id="nombreUser"></h1>
   </header>
   <nav>
     <button id="btnNews" class="btn-nav btn-news"><a href="#news"><i class="fa-solid fa-house"></i></a></button>
@@ -18,144 +23,187 @@
     <button id="btnCarr" class="btn-nav"><a href="#">Materias</a></button>
     <button id="btnCont" class="btn-nav"><a href="#contacto">Calendario</a></button>
     <button id="btnCont" class="btn-nav"><a href="#contacto">Mensajes</a></button>
-    <button id="btnCont" class="btn-nav"><a href="#contacto">Recursos</a></button>
-</nav>
+  </nav>
 
-    
-      <main>
-        <section>
-          <h2>Últimas noticias</h2>
-          <article>
-            <h3>Título de la noticia 1</h3>
-            <p>Contenido de la noticia 1...</p>
-            <a href="#">Leer más</a>
-          </article>
-    
-          <article>
-            <h3>Título de la noticia 2</h3>
-            <p>Contenido de la noticia 2...</p>
-            <a href="#">Leer más</a>
-          </article>
-        </section>
-    
-        <section>
-          <h2>Materias</h2>
-          <div class="card-container">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  <button>jdjdjd</button>
-                </div>
+
+  <main>
+    <section>
+      <h2>NOTICIAS Y NOVEDADES</h2>
+      <article>
+        <h3>Programacion III</h3>
+        <p>Queridos alumnos,<br>
+
+          Espero que estén teniendo una excelente semana de clases. Les escribo para informarles que, debido a una
+          circunstancia excepcional, no habrá clases el día 20 de julio. <br>
+
+          Sin embargo, no se preocupen, ya que he preparado una actividad para que puedan realizar en casa. Esta
+          actividad tiene como objetivo reforzar los temas que hemos estado estudiando en clase y brindarles la
+          oportunidad de practicar y profundizar en su aprendizaje. <br>
+
+          La actividad consiste en investigar y escribir un ensayo breve sobre un tema relacionado con nuestra materia.
+          Pueden elegir un tema de su interés que esté dentro del temario que hemos cubierto hasta ahora. Les adjunto un
+          archivo con las instrucciones detalladas y los criterios de evaluación. <br>
+
+          Recuerden que esta actividad es obligatoria y deberán entregarla el día siguiente al regreso a clases.
+          Aprovechen este día libre para investigar, reflexionar y escribir un ensayo de calidad. <br>
+
+          Si tienen alguna pregunta o necesitan aclarar algún aspecto de la actividad, no duden en contactarme por
+          correo electrónico o durante la próxima clase. <br>
+
+          Agradezco su comprensión y compromiso con su aprendizaje. Nos vemos pronto y espero que aprovechen esta
+          oportunidad para seguir creciendo académicamente. <br>
+
+          Atentamente,
+          Prof. Martin Bonucelli.</p>
+        <a href="#">Tarea</a>
+      </article>
+
+      <article>
+        <h3>Usuario Campus Virtual</h3>
+        <p>Si ya poseen USUARIO y CONTRASEÑA no es necesario NINGUN registro adicional Si no recuerda su Usuario o
+          Contraseña la puede recuperar poniendo el EMAIL válido (registrado en la plataforma) SOLO uno de los dos. <br>
+          El email de la administración del campus es exclusivamente cvgdelta@frd.utn.edu.ar - solo se responderán
+          consultas pertinentes al mismo
+          Los usuarios que soliciten cambio de legajo si al ingresar no funciona con el provisorio es porque ya impactó
+          el cambio solicitado, no esperen el aviso.</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfy6ILNzmt1BLeWbN62kNBl8SZ_HCYBHr0AmYVnqdfs5tfx-A/viewform">Formulario</a>
+      </article>
+    </section>
+
+    <section>
+      <h2>Materias</h2>
+      <div class="card-container">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/img/programacion_3.jpeg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Programacion III</h5>
+                <p class="card-text">Prof. Martin Bonucelli</p>
+                <p class="card-text"><small class="text-body-secondary">Lunes 18:30hs a 21:30hs</small></p>
+                <button>Ingresar</button>
               </div>
             </div>
           </div>
-    
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  <button>jdjdjd</button>
-                </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/img/lab3.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Laboratorio III</h5>
+                <p class="card-text">Prof. Martin Bonucelli</p>
+                <p class="card-text"><small class="text-body-secondary">Mier. 18:30hs a 21:30hs</small></p>
+                <button>Ingrasar</button>
               </div>
             </div>
           </div>
-  
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  <button>jdjdjd</button>
-                </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/img/ingles.jpeg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Ingles III</h5>
+                <p class="card-text">Prof. Claudio Pascal</p>
+                <p class="card-text"><small class="text-body-secondary">Vier. 18hs a 21hs</small></p>
+                <button>Ingresar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-        </section>
-    
-        <section>
-          <h2>Calendario de eventos</h2>
-          <div class="calendar">
-            <h2>Eventos Próximos</h2>
-            <ul class="event-list">
-              <li class="event">
-                <span class="event-date">12 de Julio, 2023</span>
-                <span class="event-title">Conferencia sobre Innovación</span>
-                <span class="event-countdown" data-countdown="2023-07-12T18:00:00">-</span>
-              </li>
-              <li class="event">
-                <span class="event-date">18 de Julio, 2023</span>
-                <span class="event-title">Taller de Desarrollo Web</span>
-                <span class="event-countdown" data-countdown="2023-07-18T14:30:00">-</span>
-              </li>
-              <li class="event">
-                <span class="event-date">25 de Julio, 2023</span>
-                <span class="event-title">Charla sobre Emprendimiento</span>
-                <span class="event-countdown" data-countdown="2023-07-25T10:00:00">-</span>
-              </li>
-            </ul>
-          </div>
-          
-        </section>
-    
-        <section>
-          <h2>Recursos adicionales</h2>
-          <ul>
-            <li><a href="#">Recurso 1</a></li>
-            <li><a href="#">Recurso 2</a></li>
-            <li><a href="#">Recurso 3</a></li>
-            <li><a href="#">Recurso 4</a></li>
-            <li><a href="#">Recurso 5</a></li>
-          </ul>
-        </section>
-      </main>
-    
-      <footer>
-        <p>© 2023 Campus Virtual. Todos los derechos reservados.</p>
-      </footer>
+      </div>
+    </section>
 
-      <script>
-        // Función para calcular el tiempo restante hasta el evento
-        function updateCountdown() {
-          var eventCountdownElements = document.getElementsByClassName('event-countdown');
-      
-          for (var i = 0; i < eventCountdownElements.length; i++) {
-            var countdownElement = eventCountdownElements[i];
-            var eventDate = new Date(countdownElement.getAttribute('data-countdown')).getTime();
-            var now = new Date().getTime();
-      
-            var distance = eventDate - now;
-      
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-            countdownElement.textContent = hours + "h " + minutes + "m " + seconds + "s";
-          }
-        }
-      
-        // Actualizar el contador cada segundo
-        setInterval(updateCountdown, 1000);
-      </script>
+    <section>
+      <h2>Calendario de eventos</h2>
+      <div class="calendar">
+        <h2>Eventos Próximos</h2>
+        <ul class="event-list">
+          <li class="event">
+            <span class="event-date">12 de Julio, 2023</span>
+            <span class="event-title">Parcial 2 Lab III</span>
+            <span class="event-countdown" data-countdown="2023-07-12T18:00:00">-</span>
+          </li>
+          <li class="event">
+            <span class="event-date">18 de Julio, 2023</span>
+            <span class="event-title">Entrega Proyeco Prog III</span>
+            <span class="event-countdown" data-countdown="2023-07-18T14:30:00">-</span>
+          </li>
+          <li class="event">
+            <span class="event-date">25 de Julio, 2023</span>
+            <span class="event-title">Final Ingles III</span>
+            <span class="event-countdown" data-countdown="2023-07-25T10:00:00">-</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-section">
+      <h4>Enlaces útiles</h4>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Calendario</a></li>
+        <li><a href="#">Biblioteca</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Email: ejemplo@correo.com</a></li>
+        <li><a href="#">Teléfono: 123456789</a></li>
+        <li><a href="#">Dirección: Ciudad, País</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Social</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Función para calcular el tiempo restante hasta el evento
+    function updateCountdown() {
+      var eventCountdownElements = document.getElementsByClassName('event-countdown');
+
+      for (var i = 0; i < eventCountdownElements.length; i++) {
+        var countdownElement = eventCountdownElements[i];
+        var eventDate = new Date(countdownElement.getAttribute('data-countdown')).getTime();
+        var now = new Date().getTime();
+
+        var distance = eventDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = hours + "h " + minutes + "m " + seconds + "s";
+      }
+    }
+
+    // Actualizar el contador cada segundo
+    setInterval(updateCountdown, 1000);
+  </script>
+  <script src="/dashboards/alumnos/alumnosDash.js"></script>
 </body>
+
 </html>
