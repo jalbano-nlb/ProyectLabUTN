@@ -82,10 +82,37 @@ function generarAlumnos (){
         for (let v = 0; v < alumno.Notas.length; v++) {
             
             let nota = alumno.Notas[v];
-            stringTable = stringTable + `<td>${nota.nota}</td>`; 
+            stringTable = stringTable + `<td onclick="modificarNota(${alumno.id}, ${nota.id})">${nota.nota}</td>`; 
         }
         trAlumno.innerHTML = stringTable;
         contenedorBodyQuali.appendChild(trAlumno);
       }
 }
 generarAlumnos();
+
+function AskNota(){
+    return prompt("Ingrese la calificación deseada");
+}
+
+function modificarNota(alumnoId, notaId){
+    let _notaDeseada = AskNota();
+    
+    let _validNota = parseInt(_notaDeseada);
+
+    if (_validNota >= 1 && _validNota <= 10) {
+        
+        let _foundAlumn = misAlumnos.find(a => a.id == alumnoId);
+    
+        _foundAlumn.Notas.forEach(n => {
+        if (n.id == notaId) n.nota = _notaDeseada;
+        });
+        let contenedorBodyQuali = document.getElementById('body-quali');
+        contenedorBodyQuali.innerHTML = '';
+
+        generarAlumnos();
+    }else{
+        alert("Nota inválida");
+    }
+
+    
+}
