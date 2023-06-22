@@ -74,13 +74,13 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
 }
-.infoNotas{
+.infoAlgo{
     flex-basis: 10rem;
 }
 .infoCont{
     flex-basis: 10rem;
 }
-.infoAct{
+.infoNotas{
     flex-basis: 40rem;
 }
 
@@ -151,4 +151,17 @@ footer ul {
 footer a {
     color: #fff;
     transition: opacity 0.2s ease;
+}
+
+#calificaciones p{
+    color: #26A69A;
+    font-size: small;
+    text-align: center;
+}
+
+.btn-export {
+    color: white;
+    border: 1px solid #408d86;
+    background-color: #408d86;
+    border-radius: 1rem;
 }

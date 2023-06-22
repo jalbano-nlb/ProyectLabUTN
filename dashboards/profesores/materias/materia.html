@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="materia.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 id="nombreMateria"> </h1>
+        <span>Horarios: Lunes y Miércoles de 9:00 a 11:00</span>
+    </header>
+
+    <div class="container">
+        
+        <div class="column infoCont">
+            <section id="contenidos">
+                <h2>Contenidos de la Materia</h2>
+                <ul>
+                    <li>Tema 1</li>
+                    <li>Tema 2</li>
+                    <li>Tema 3</li>
+                    <li>Tema 4</li>
+                    <li>Tema 5</li>
+                    <li>Tema 6</li>
+                    <li>Tema 7</li>
+                    <li>Tema 8</li>
+                    <li>Tema 9</li>
+                    <li>Tema 10</li>
+                    <li>Tema 11</li>
+                    <li>Tema 12</li>
+                    <li>Tema 13</li>
+                    <li>Tema 14</li>
+                    <li>Tema 15</li>
+                </ul>
+            </section>
+        </div>
+        <div class="column infoNotas">
+            <section id="calificaciones">
+                <div style="text-align: end; padding-bottom: 1rem;">
+                    <button type="button" class="btn-export pull-right" onclick="exportToExcel()">XLS<ion-icon name="download-outline"></ion-icon></button>
+                    <button type="button" class="btn-export pull-right" onclick="exportToCSV()">CSV<ion-icon name="download-outline"></ion-icon></button>
+                </div>
+                <p>Si a alguna calificación no le corresponde valor, entonces ingrese "NC" en su luagar</p>
+                <table id="t-qualis" class="table table-striped table-hover">
+                    <thead>
+                        <tr id="header-qualiRow">
+                          <th scope="col">#</th>
+                          <th scope="col">Alumno</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-quali">
+                        
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="column infoAlgo">
+            <section id="notas">
+                <h2>Calificaciones</h2>
+                <p>Calificacion 1</p>
+                <p>Calificacion 2</p>
+                <p>Calificacion 3</p>
+                <p>Calificacion 4</p>
+                <p>Calificacion 5</p>
+                <p>Calificacion 6</p>
+            </section>
+        </div>        
+    </div>
+    <footer>
+        <p>© 2023 Campus Virtual. Todos los derechos reservados.</p>
+    </footer>
+</body>
+<script src="/dashboards/profesores/materias/materia.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
