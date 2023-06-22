@@ -11,6 +11,7 @@ var misCalificativos = [
     {id:2, nombre:'TP2'},
     {id:3, nombre:'Parcial'},
     {id:4, nombre:'Recuperatorio'},
+    {id:5, nombre:'Regularidad'},
 ]
 
 var misAlumnos = [
@@ -84,6 +85,13 @@ function generarAlumnos (){
             let nota = alumno.Notas[v];
             stringTable = stringTable + `<td onclick="modificarNota(${alumno.id}, ${nota.id})">${nota.nota}</td>`; 
         }
+
+        if (alumno.Regular){
+            stringTable = stringTable + `<td style="color: green"> <ion-icon name="checkbox-outline"></ion-icon> </td>`;
+
+        }else{
+            stringTable = stringTable + `<td style="color: red"> <ion-icon name="remove-circle-outline"></ion-icon> </td>`;
+        }
         trAlumno.innerHTML = stringTable;
         contenedorBodyQuali.appendChild(trAlumno);
       }
@@ -110,9 +118,87 @@ function modificarNota(alumnoId, notaId){
         contenedorBodyQuali.innerHTML = '';
 
         generarAlumnos();
+    }else if(_notaDeseada == "NC"){
+        let _foundAlumn = misAlumnos.find(a => a.id == alumnoId);
+    
+        _foundAlumn.Notas.forEach(n => {
+        if (n.id == notaId) n.nota = _notaDeseada;
+        });
+        let contenedorBodyQuali = document.getElementById('body-quali');
+        contenedorBodyQuali.innerHTML = '';
+
+        generarAlumnos();
     }else{
         alert("Nota inválida");
     }
+}
 
-    
+function exportToExcel() {
+    var table = document.getElementById("t-qualis");
+  
+    // Crear el contenido XML para el archivo XLS
+    var xmlContent = generateExcelXML(table);
+  
+    // Establecer el tipo de datos para la descarga
+    var dataType = 'data:application/vnd.ms-excel';
+  
+    // Crear un enlace temporal y hacer clic en él
+    var link = document.createElement('a');
+    link.href = dataType + ',' + encodeURIComponent(xmlContent);
+    link.style = 'visibility:hidden';
+    link.download = 'tabla.xls';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+  
+function generateExcelXML(table) {
+    var xmlContent = '<?xml version="1.0"?>\r\n';
+    xmlContent += '<ss:Workbook xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">\r\n';
+    xmlContent += '  <ss:Worksheet ss:Name="Sheet1">\r\n';
+    xmlContent += '    <ss:Table>\r\n';
+  
+    var rows = table.getElementsByTagName('tr');
+    for (var i = 0; i < rows.length; i++) {
+      xmlContent += '      <ss:Row>\r\n';
+      var cells = rows[i].querySelectorAll('td, th');
+      for (var j = 0; j < cells.length; j++) {
+        var cellValue = cells[j].innerText;
+        xmlContent += '        <ss:Cell>\r\n';
+        xmlContent += '          <ss:Data ss:Type="String">' + cellValue + '</ss:Data>\r\n';
+        xmlContent += '        </ss:Cell>\r\n';
+      }
+      xmlContent += '      </ss:Row>\r\n';
+    }
+  
+    xmlContent += '    </ss:Table>\r\n';
+    xmlContent += '  </ss:Worksheet>\r\n';
+    xmlContent += '</ss:Workbook>\r\n';
+  
+    return xmlContent;
+}
+  
+function exportToCSV() {
+var table = document.getElementById("t-qualis");
+var rows = table.getElementsByTagName("tr");
+var csv = [];
+
+for (var i = 0; i < rows.length; i++) {
+    var row = [], cols = rows[i].querySelectorAll("td, th");
+
+    for (var j = 0; j < cols.length; j++)
+    row.push(cols[j].innerText);
+
+    csv.push(row.join(","));
+}
+
+// Crear un enlace temporal y hacer clic en él
+var csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(csv.join("\n"));
+var link = document.createElement('a');
+link.href = csvContent;
+link.style = 'visibility:hidden';
+link.download = 'tabla.csv';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
 }
