@@ -5,27 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/dashboards/alumnos/AlumnosDash.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/60fa674f5d.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 
 <body>
   <header class="header">
     <h1 id="nombreUser"></h1>
-    <div style="text-align: end; padding-bottom: 1rem;">
-      <button type="button" class="btn-export pull-right" onclick="">Cerrar Sesion</button>
-    </div>
   </header>
   <nav>
-    <button id="btnNews" class="btn-nav btn-news"><a href="#news"><i class="fa-solid fa-house"></i></a></button>
     <button id="btnReq" class="btn-nav"><a href="#Noticias">Noticias</a></button>
     <button id="btnCarr" class="btn-nav"><a href="#catedras">Catedras</a></button>
     <button id="btnCont" class="btn-nav"><a href="#Calendario">Calendario</a></button>
     <button id="btnCont" class="btn-nav"><a href="#contacto">Contacto</a></button>
+    <button id="btnCerrarSess" class="btn-nav" onclick="closeSession()"><i class="fa-solid fa-power-off"></i></button>
   </nav>
 
 

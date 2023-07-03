@@ -54,3 +54,8 @@ function ingresarMateria(idMateria) {
   
   window.location.href = '/dashboards/alumnos/materias/materia.html'
 }
+
+function closeSession() {
+  sessionStorage.clear();
+  window.location.href = '/login/login.html'
+}

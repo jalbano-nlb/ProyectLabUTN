@@ -22,3 +22,7 @@ switch (materiaSelected) {
     default:
         break;
 }
+
+function volverDash() {
+    window.location.href = '/dashboards/alumnos/alumnosDash.html';
+}

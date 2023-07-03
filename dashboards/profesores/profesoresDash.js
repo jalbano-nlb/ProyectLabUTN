@@ -48,3 +48,8 @@ function ingresarMateria(idMateria) {
     
     window.location.href = '/dashboards/profesores/materias/materia.html'
 }
+
+function closeSession() {
+  sessionStorage.clear();
+  window.location.href = '/login/login.html'
+}
