@@ -237,3 +237,14 @@ form {
   form input[type="submit"]:hover {
     background-color: #45a049;
   }
+
+  #backPage{
+    float: left;
+    font-weight: bold;
+  }
+
+  #backPage:hover {
+    cursor: pointer;
+    color: #fff;
+    transition-duration: 600ms;
+  }

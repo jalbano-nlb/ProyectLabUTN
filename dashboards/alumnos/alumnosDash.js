@@ -15,7 +15,7 @@ function ingresarMateria(idMateria) {
 
 const misCatedras = [
     {id:1, nombre:'Programación III', Modalidad: 'Presencial'},
-    {id:2, nombre:'Laboratorio de Programicón III', Modalidad: 'Remoto'},
+    {id:2, nombre:'Laboratorio de Programación III', Modalidad: 'Remoto'},
     {id:3, nombre:'Inglés', Modalidad: 'Presencial'},
     {id:4, nombre:'Base de Datos', Modalidad: 'Remoto'},
 ]
@@ -39,7 +39,7 @@ function generarCatedras (){
                 <p class="card-text">${catedra.Modalidad}</p>
               </div>
               <div class="card-footer">
-                <button>Botón</button>
+                <button class="btnCatedra" onclick="ingresarMateria(${catedra.id})">Ingresar</button>
               </div>
             </div>
           </div>
@@ -48,3 +48,14 @@ function generarCatedras (){
       }
 }
 generarCatedras();
+
+function ingresarMateria(idMateria) {    
+  sessionStorage.setItem('materiaSelected', idMateria);
+  
+  window.location.href = '/dashboards/alumnos/materias/materia.html'
+}
+
+function closeSession() {
+  sessionStorage.clear();
+  window.location.href = '/login/login.html'
+}

@@ -202,3 +202,7 @@ document.body.appendChild(link);
 link.click();
 document.body.removeChild(link);
 }
+
+function volverDash() {
+    window.location.href = '/dashboards/profesores/profesoresDash.html';
+}

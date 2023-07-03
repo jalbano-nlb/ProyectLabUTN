@@ -299,6 +299,17 @@ form {
     color: #728f9e;
     margin-bottom: 10px;
   }
+
+  #backPage{
+    float: left;
+    font-weight: bold;
+  }
+
+  #backPage:hover {
+    cursor: pointer;
+    color: #fff;
+    transition-duration: 600ms;
+  }
   
 
 
