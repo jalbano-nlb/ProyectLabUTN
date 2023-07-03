@@ -85,7 +85,7 @@ nav {
 }
 
 .column h2 {
-    color: #26A69A;
+    color: #000000;
     margin-bottom: 1rem;
     font-size: larger;
 }
@@ -104,7 +104,6 @@ nav {
 }
 
 .column.contact {
-    background-color: #80CBC4;
     color: #fff;
     text-align: center;
 }
@@ -127,28 +126,114 @@ nav {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #263339;
+/* Estilo global del footer */
+.footer {
+    background-color: #333;
     color: #fff;
+    padding: 50px 0;
+    text-align: center; /* Centra el contenido */
     display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-}
-
-footer div {
-    flex-basis: 33%;
-    margin-right: 2rem;
-}
-
-footer h4 {
-    margin-top: 0;
-}
-
-footer ul {
-    margin: 0;
-}
-
-footer a {
+    justify-content: space-between; /* Distribuye el contenido de manera uniforme */
+    padding-left: 5rem;
+  }
+  
+  /* Estilo de las secciones del footer */
+  .footer-section {
+    width: 33.33%;
+    box-sizing: border-box;
+    text-align: left; /* Alinea el contenido a la izquierda */
+  }
+  
+  /* Estilo de los títulos de las secciones */
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de los enlaces de las secciones */
+  .footer-section ul li a {
+    color:#80CBC4; /* Cambia el color a verde */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
     color: #fff;
-    transition: opacity 0.2s ease;
-}
+  }
+  
+  
+  
+  /* Estilo de los enlaces de contacto */
+  .footer-section:nth-child(2) ul li a {
+    color: #80CBC4; /* Cambia el color a verde */
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card:hover {
+    background-color: #80CBC4;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+    color: #263339;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #728f9e;
+    margin-bottom: 10px;
+  }
+
+  /* Estilos del formulario */
+form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 70px;
+    background-color: #D0EBEA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #25593a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }

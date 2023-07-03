@@ -14,30 +14,36 @@
     <header class="header">
         <h1 id="nombreMateria"> </h1>
         <span>Horarios: Lunes y Miércoles de 9:00 a 11:00</span>
+        <div style="text-align: end; padding-bottom: 1rem; font-size: 17px;">
+            <button type="button" class="btn-export pull-right" onclick="()">Cerrar Sesion</button>
+          </div>
     </header>
 
     <div class="container">
         
         <div class="column infoCont">
             <section id="contenidos">
-                <h2>Contenidos de la Materia</h2>
-                <ul>
-                    <li>Tema 1</li>
-                    <li>Tema 2</li>
-                    <li>Tema 3</li>
-                    <li>Tema 4</li>
-                    <li>Tema 5</li>
-                    <li>Tema 6</li>
-                    <li>Tema 7</li>
-                    <li>Tema 8</li>
-                    <li>Tema 9</li>
-                    <li>Tema 10</li>
-                    <li>Tema 11</li>
-                    <li>Tema 12</li>
-                    <li>Tema 13</li>
-                    <li>Tema 14</li>
-                    <li>Tema 15</li>
-                </ul>
+                <h2>Clases de la materia</h2>
+                <ul class="card-list">
+                    <li class="card">
+                      <h3>Clase 1</h3>
+                    </li>
+                    <li class="card">
+                      <h3>Clase 2</h3>
+                    </li>
+                    <li class="card">
+                      <h3>Clase 3</h3>
+                    </li>
+                    <li class="card">
+                      <h3>Clase 4</h3>
+                    </li>
+                    <li class="card">
+                        <h3>Clase 5</h3>
+                      </li>
+                      <li class="card">
+                        <h3>clase 6</h3>
+                      </li>
+                  </ul>
             </section>
         </div>
         <div class="column infoNotas">
@@ -62,19 +68,69 @@
         </div>
         <div class="column infoAlgo">
             <section id="notas">
-                <h2>Calificaciones</h2>
-                <p>Calificacion 1</p>
-                <p>Calificacion 2</p>
-                <p>Calificacion 3</p>
-                <p>Calificacion 4</p>
-                <p>Calificacion 5</p>
-                <p>Calificacion 6</p>
+                <h2>Eventos Próximos</h2>
+        <ul class="event-list">
+          <li class="event">
+            <span class="event-date">15 de Julio</span>
+            <span class="event-title">Finalización del 1º Cuatrimestre</span>
+          </li>
+          <li class="event">
+            <span class="event-date">24 al 29 de Julio </span>
+            <span class="event-title">Turno de exámenes finales – 1º Llamado</span>
+          </li>
+          <li class="event">
+            <span class="event-date">31/Jul al 5/Agto</span>
+            <span class="event-title">Turno de exámenes finales – 2º Llamado</span>
+          </li>
+          <li class="event">
+            <span class="event-date">14 de Agosto</span>
+            <span class="event-title">Comienzo de clases Cuatrimestrales</span>
+          </li>
+        </ul>
             </section>
         </div>        
+
+        <form action="enviar.php" method="POST">
+            <label for="nombre">Nombre y Apellido:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+        
+            <label for="sede">Sede:</label>
+            <input type="text" id="sede" name="sede" required><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required><br><br>
+            
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" cols="30" required></textarea><br><br>
+        
+            <input type="submit" value="Enviar">
+          </form>
     </div>
-    <footer>
-        <p>© 2023 Campus Virtual. Todos los derechos reservados.</p>
-    </footer>
+    
+
+
+    <footer class="footer">
+        <div class="footer-section">
+          <h4>Enlaces UTN</h4>
+          <ul>
+            <li><a href="https://www.frgp.utn.edu.ar/alumnos/office365">Office 365</a></li>
+            <li><a href="https://elibro.net/es/lc/utnfrd/inicio/">eLibro</a></li>
+            <li><a href="https://ria.utn.edu.ar/">RIA</a></li>
+            <li><a href="http://portal.bibliotecas.utn.edu.ar/login">Bibliotecas Electronicas</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#">Email: FRD@UTN.com</a></li>
+            <li><a href="#">Teléfono: +54 11 5371 5600</a></li>
+            <li><a href="#">Dirección:Buenos Aires, Sarmiento 440 (C1041AAJ)</a></li>
+          </ul>
+        </div>
+      </footer>
 </body>
 <script src="/dashboards/profesores/materias/materia.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

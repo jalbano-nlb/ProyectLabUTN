@@ -16,46 +16,38 @@
 <body>
   <header class="header">
     <h1 id="nombreUser"></h1>
+    <div style="text-align: end; padding-bottom: 1rem;">
+      <button type="button" class="btn-export pull-right" onclick="()">Cerrar Sesion</button>
+    </div>
   </header>
   <nav>
     <button id="btnNews" class="btn-nav btn-news"><a href="#news"><i class="fa-solid fa-house"></i></a></button>
-    <button id="btnReq" class="btn-nav"><a href="#requisitos">Noticias</a></button>
-    <button id="btnCarr" class="btn-nav"><a href="#">Materias</a></button>
-    <button id="btnCont" class="btn-nav"><a href="#contacto">Calendario</a></button>
-    <button id="btnCont" class="btn-nav"><a href="#contacto">Mensajes</a></button>
+    <button id="btnReq" class="btn-nav"><a href="#Noticias">Noticias</a></button>
+    <button id="btnCarr" class="btn-nav"><a href="#catedras">Catedras</a></button>
+    <button id="btnCont" class="btn-nav"><a href="#Calendario">Calendario</a></button>
+    <button id="btnCont" class="btn-nav"><a href="#contacto">Contacto</a></button>
   </nav>
 
 
   <main>
-    <section>
+    <section id="noticias">
       <h2>NOTICIAS Y NOVEDADES</h2>
       <article>
-        <h3>Programacion III</h3>
+        <h3>¡Nuevo! - Bibliotecas Electrónicas UTN</h3>
         <p>Queridos alumnos,<br>
-
-          Espero que estén teniendo una excelente semana de clases. Les escribo para informarles que, debido a una
-          circunstancia excepcional, no habrá clases el día 20 de julio. <br>
-
-          Sin embargo, no se preocupen, ya que he preparado una actividad para que puedan realizar en casa. Esta
-          actividad tiene como objetivo reforzar los temas que hemos estado estudiando en clase y brindarles la
-          oportunidad de practicar y profundizar en su aprendizaje. <br>
-
-          La actividad consiste en investigar y escribir un ensayo breve sobre un tema relacionado con nuestra materia.
-          Pueden elegir un tema de su interés que esté dentro del temario que hemos cubierto hasta ahora. Les adjunto un
-          archivo con las instrucciones detalladas y los criterios de evaluación. <br>
-
-          Recuerden que esta actividad es obligatoria y deberán entregarla el día siguiente al regreso a clases.
-          Aprovechen este día libre para investigar, reflexionar y escribir un ensayo de calidad. <br>
-
-          Si tienen alguna pregunta o necesitan aclarar algún aspecto de la actividad, no duden en contactarme por
-          correo electrónico o durante la próxima clase. <br>
-
-          Agradezco su comprensión y compromiso con su aprendizaje. Nos vemos pronto y espero que aprovechen esta
-          oportunidad para seguir creciendo académicamente. <br>
-
-          Atentamente,
-          Prof. Martin Bonucelli.</p>
-        <a href="#">Tarea</a>
+          El Portal de Acceso a Bibliotecas Electrónicas es un servicio para docentes e investigadores de UTN para acceder a sistemas de terceros. UTN no se responsabiliza si en el momento de la consulta los sistemas externos no se encuentran funcionales.</p>
+        <a href="http://portal.bibliotecas.utn.edu.ar/login">Biblioteca UTN</a>
+        <br>
+        <br>
+        <p>El portal es un servicio brindado desde el Rectorado para toda la comunidad de investigadores y docentes de la Universidad Tecnológica Nacional.
+          Mediante este servicio, los usuarios podrán acceder y utilizar las bibliotecas electrónicas del MINCYT y las de aquellas instituciones con las que la UTN tiene suscritos convenios vigentes. El acceso al portal está habilitado tanto para computadoras como para dispositivos móviles sin otro requerimiento que un navegador y una conexión a Internet. PARA UTILIZAR EL SERVICIO SE DEBE REALIZAR LA REGISTRACIÓN PERSONAL QUE, LUEGO DE SER AUTORIZADA, PERMITIRÁ EL ACCESO Y USO DEL PORTAL.</p>
+        <p>Acceda a:
+          Publicaciones,
+          Bases de datos,
+          Libros,
+          Estándares,
+          Repositorios,
+          Datos primarios.</p>
       </article>
 
       <article>
@@ -71,14 +63,14 @@
       </article>
     </section>
 
-    <section>
+    <section id="catedras">
       <h2>Mis Cátedras</h2>
       <div id="contenedor-catedras" class="card-container">
         
       </div>
     </section>
 
-    <section>
+    <section id="Calendario">
       <h2>Calendario de eventos</h2>
       <div class="calendar">
         <h2>Eventos Próximos</h2>
@@ -104,59 +96,27 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="contacto">
     <div class="footer-section">
-      <h4>Enlaces útiles</h4>
+      <h4>Enlaces UTN</h4>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Calendario</a></li>
-        <li><a href="#">Biblioteca</a></li>
+        <li><a href="https://www.frgp.utn.edu.ar/alumnos/office365">Office 365</a></li>
+        <li><a href="https://elibro.net/es/lc/utnfrd/inicio/">eLibro</a></li>
+        <li><a href="https://ria.utn.edu.ar/">RIA</a></li>
+        <li><a href="http://portal.bibliotecas.utn.edu.ar/login">Bibliotecas Electronicas</a></li>
       </ul>
     </div>
     <div class="footer-section">
       <h4>Contacto</h4>
       <ul>
-        <li><a href="#">Email: ejemplo@correo.com</a></li>
-        <li><a href="#">Teléfono: 123456789</a></li>
-        <li><a href="#">Dirección: Ciudad, País</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Social</h4>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Email: FRD@UTN.com</a></li>
+        <li><a href="#">Teléfono: +54 11 5371 5600</a></li>
+        <li><a href="#">Dirección:Buenos Aires, Sarmiento 440 (C1041AAJ)</a></li>
       </ul>
     </div>
   </footer>
-
-  <script>
-    // Función para calcular el tiempo restante hasta el evento
-    function updateCountdown() {
-      var eventCountdownElements = document.getElementsByClassName('event-countdown');
-
-      for (var i = 0; i < eventCountdownElements.length; i++) {
-        var countdownElement = eventCountdownElements[i];
-        var eventDate = new Date(countdownElement.getAttribute('data-countdown')).getTime();
-        var now = new Date().getTime();
-
-        var distance = eventDate - now;
-
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.textContent = hours + "h " + minutes + "m " + seconds + "s";
-      }
-    }
-
-    // Actualizar el contador cada segundo
-    setInterval(updateCountdown, 1000);
-  </script>
   <script src="/dashboards/alumnos/alumnosDash.js"></script>
+  <script src="/dashboards/alumnos/calendar.js"></script>
 </body>
 
 </html>
