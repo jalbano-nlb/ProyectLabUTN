@@ -239,7 +239,7 @@ form {
   }
 
   #backPage{
-    float: left;
+    display: flex;
     font-weight: bold;
   }
 
