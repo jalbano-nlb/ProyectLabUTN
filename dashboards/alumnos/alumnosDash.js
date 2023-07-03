@@ -39,7 +39,7 @@ function generarCatedras (){
                 <p class="card-text">${catedra.Modalidad}</p>
               </div>
               <div class="card-footer">
-                <button>Botón</button>
+                <button onclick="ingresarMateria(${catedra.id})">Botón</button>
               </div>
             </div>
           </div>
@@ -48,3 +48,9 @@ function generarCatedras (){
       }
 }
 generarCatedras();
+
+function ingresarMateria(idMateria) {    
+  sessionStorage.setItem('materiaSelected', idMateria);
+  
+  window.location.href = '/dashboards/alumnos/materias/materia.html'
+}
