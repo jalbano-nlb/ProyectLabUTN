@@ -226,6 +226,22 @@ article {
   border-radius: 1rem;
 }
 
+.card-footer{
+  background-color: #408d86 !important;
+}
+
+.btnCatedra{
+  height: 2rem;
+  color: #fff;
+  background-color: transparent;
+  border: 0px;
+}
+
+.btnCatedra:hover {
+  font-size: 1.2rem;
+  transition-duration: 100ms;
+}
+
 /* TAMAÑO EXTRA CHICO (<490px) */
 @media (max-width: 490px) {
   main article {
