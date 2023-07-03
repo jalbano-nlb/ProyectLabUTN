@@ -90,6 +90,10 @@ nav {
     font-size: larger;
 }
 
+#contenidos{
+  border-bottom: 2px solid #728f9e;
+}
+
 .column p {
     color: #728f9e;
 }
@@ -247,4 +251,8 @@ form {
     cursor: pointer;
     color: #fff;
     transition-duration: 600ms;
+  }
+  
+  #intro {
+    width: 100%;
   }
