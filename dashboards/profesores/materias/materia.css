@@ -127,31 +127,49 @@ nav {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #263339;
+/* Estilo global del footer */
+.footer {
+    background-color: #333;
     color: #fff;
+    padding: 50px 0;
+    text-align: center; /* Centra el contenido */
     display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-}
-
-footer div {
-    flex-basis: 33%;
-    margin-right: 2rem;
-}
-
-footer h4 {
-    margin-top: 0;
-}
-
-footer ul {
-    margin: 0;
-}
-
-footer a {
+    justify-content: space-between; /* Distribuye el contenido de manera uniforme */
+    padding-left: 5rem;
+  }
+  
+  /* Estilo de las secciones del footer */
+  .footer-section {
+    width: 33.33%;
+    box-sizing: border-box;
+    text-align: left; /* Alinea el contenido a la izquierda */
+  }
+  
+  /* Estilo de los títulos de las secciones */
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo de los enlaces de las secciones */
+  .footer-section ul li a {
+    color:#80CBC4; /* Cambia el color a verde */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
     color: #fff;
-    transition: opacity 0.2s ease;
-}
+  }
+  
+  
+  
+  /* Estilo de los enlaces de contacto */
+  .footer-section:nth-child(2) ul li a {
+    color: #80CBC4; /* Cambia el color a verde */
+  }
+  
+  
 
 #calificaciones p{
     color: #26A69A;
@@ -165,3 +183,322 @@ footer a {
     background-color: #408d86;
     border-radius: 1rem;
 }
+
+.btn-export {
+    color: white;
+    border: 1px solid #408d86;
+    background-color: #408d86;
+    border-radius: 1rem;
+}
+
+
+/* Estilos del formulario */
+form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 70px;
+    background-color: #D0EBEA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  
+  .event-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .event {
+    background-color: #D0EBEA;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-date {
+    display: block;
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  
+  .event-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #080808;
+    margin-bottom: 10px;
+  }
+  
+  .event-countdown {
+    display: block;
+    font-size: 1.2rem;
+    color: #728f9e;
+  }
+
+  .card-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card {
+    background-color: #D0EBEA;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card:hover {
+    background-color: #80CBC4;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+    color: #263339;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #728f9e;
+    margin-bottom: 10px;
+  }
+  
+
+
+/* TAMAÑO EXTRA CHICO (<490px) */
+@media (max-width: 490px) {
+    /* Agrega tus estilos CSS para esta medida aquí */
+    body {
+      font-size: 14px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    #nombreMateria {
+      font-size: 24px;
+    }
+    
+    .infoCont {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .infoNotas {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .infoAlgo {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    form {
+      width: 100%;
+    }
+    
+    footer {
+      padding: 20px;
+    }
+  }
+  
+  /* TAMAÑO CHICO (491px - 766px) */
+  @media (min-width: 491px) and (max-width: 766px) {
+    /* Agrega tus estilos CSS para esta medida aquí */
+    body {
+      font-size: 16px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    #nombreMateria {
+      font-size: 28px;
+    }
+    
+    .infoCont {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    
+    .infoNotas {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    
+    .infoAlgo {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    
+    form {
+      width: 100%;
+    }
+    
+    footer {
+      padding: 30px;
+    }
+  }
+  
+  /* TAMAÑO MEDIO (767px - 1022px) */
+  @media (min-width: 767px) and (max-width: 1022px) {
+    /* Agrega tus estilos CSS para esta medida aquí */
+    body {
+      font-size: 18px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px;
+    }
+    
+    #nombreMateria {
+      font-size: 32px;
+    }
+    
+    .infoCont {
+      width: 33.33%;
+      margin-bottom: 40px;
+    }
+    
+    .infoNotas {
+      width: 33.33%;
+      margin-bottom: 40px;
+    }
+    
+    .infoAlgo {
+      width: 33.33%;
+      margin-bottom: 40px;
+    }
+    
+    form {
+      width: 100%;
+    }
+    
+    footer {
+      padding: 40px;
+    }
+  }
+  
+  /* TAMAÑO GRANDE (1023px - 1280px) */
+  @media (min-width: 1023px) and (max-width: 1280px) {
+    /* Agrega tus estilos CSS para esta medida aquí */
+    body {
+      font-size: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 50px;
+    }
+    
+    #nombreMateria {
+      font-size: 36px;
+    }
+    
+    .infoCont {
+      width: 25%;
+      margin-bottom: 50px;
+    }
+    
+    .infoNotas {
+      width: 25%;
+      margin-bottom: 50px;
+    }
+    
+    .infoAlgo {
+      width: 25%;
+      margin-bottom: 50px;
+    }
+    
+    form {
+      width: 50%;
+    }
+    
+    footer {
+      padding: 50px;
+    }
+  }
+  
+  /* TAMAÑO EXTRA GRANDE (>1280px) */
+  @media (min-width: 1281px) {
+    /* Agrega tus estilos CSS para esta medida aquí */
+    body {
+      font-size: 22px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 60px;
+    }
+    
+    #nombreMateria {
+      font-size: 40px;
+    }
+    
+    .infoCont {
+      width: 20%;
+      margin-bottom: 60px;
+    }
+    
+    .infoNotas {
+      width: 20%;
+      margin-bottom: 60px;
+    }
+    
+    .infoAlgo {
+      width: 20%;
+      margin-bottom: 60px;
+    }
+    
+    form {
+      width: 40%;
+    }
+    
+    footer {
+      padding: 60px;
+    }
+  }
+  
