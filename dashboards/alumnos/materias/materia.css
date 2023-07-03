@@ -256,3 +256,27 @@ form {
   #intro {
     width: 100%;
   }
+
+  /* .card-presente{
+    background-color: #5ca760;
+  } */
+  .card-presente:hover{
+    background-color: #8acf8d;
+    transition-duration: 200ms;
+  }
+
+  /* .card-ausente{
+    background-color: #ab4553;
+  } */
+  .card-ausente:hover{
+    background-color: #c4747f;
+    transition-duration: 200ms;
+  }
+
+  /* .card-pendiente{
+    background-color: #a78f26;
+  } */
+  .card-pendiente:hover{
+    background-color: #b8a75b;
+    transition-duration: 200ms;
+  }
