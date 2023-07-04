@@ -187,6 +187,9 @@
   .debo-mostrar {
     display: flex !important; 
   }
+  .debo-mostrar-bloque {
+    display: block !important; 
+  }
   
   /* TAMAÑO EXTRA CHICO (<490px) */
   @media (max-width: 490px) {

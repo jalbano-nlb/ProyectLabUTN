@@ -16,18 +16,17 @@
     <h1 id="nombreUser"></h1>
   </header>
   <nav>
-    <button id="btnReq" class="btn-nav"><a href="#profesores">Profesores</a></button>
-    <button id="btnCarr" class="btn-nav"><a href="#catedras">Catedras</a></button>
-    <button id="btnCont" class="btn-nav"><a href="#alumnos">Alumnos</a></button>
+    <button id="btnReq" class="btn-nav" onclick="verTabProfes()"><a href="#profesores">Profesores</a></button>
+    <button id="btnCont" class="btn-nav" onclick="verTabAlumnos()"><a href="#alumnos">Alumnos</a></button>
     <button id="btnCerrarSess" class="btn-nav" onclick="closeSession()"><i class="fa-solid fa-power-off"></i></button>
   </nav>
 
 
   <main>
-    <section id="profesores">
+    <section id="profesores" style="display: none;">
       <h2 style="text-align: center;">Profesores</h2>
       <article class="row">
-        <h3 class="col-12">Filtros</h3>
+        <h3 class="col-12">Filtros Profesores</h3>
         <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
             <input type="text" class="form-control" id="inputName" aria-describedby="Nombre" placeholder="Nombre">
         </div>
@@ -88,12 +87,69 @@
 
     </section>
 
-    <section id="catedras">
-      <h2>Mis Cátedras</h2>
-      <div id="contenedor-catedras" class="card-container">
+    <section id="alumnos" style="display: none;">
+        <h2 style="text-align: center;">Alumnos</h2>
+        <article class="row">
+          <h3 class="col-12">Filtros Alumnos</h3>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+              <input type="text" class="form-control" id="inputNameAlumn" aria-describedby="Nombre" placeholder="Nombre">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+              <input type="text" class="form-control" id="inputLegAlumn" aria-describedby="Legajo" placeholder="Legajo">
+  
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <input type="text" class="form-control" id="inputDNIAlumn" aria-describedby="DNI" placeholder="DNI">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <input type="text" class="form-control" id="inputSedeAlumn" aria-describedby="Sede" placeholder="Sede">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <button type="button" style="margin-left: .2rem" class="btn-export " onclick="mostrarFormularioAlumno()">Nuevo &nbsp;<i class="fa-solid fa-plus"></i></button>
+              <button type="button" class="btn-export " onclick="searchAlumnos()">Buscar &nbsp;<i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </article>
+  
+        <div class="row" id="contenedorTablaAlumnos" style="display: none;">
+          <table id="t-alumnos" class="table table-striped table-hover">
+              <thead>
+                  <tr id="header-alumnosRow">
+                    <th scope="col">#</th>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Sede</th>
+                  </tr>
+              </thead>
+              <tbody id="body-alumnos">
+                  <!-- SE CARGA AUTO -->
+              </tbody>
+          </table>
+        </div>
+  
         
-      </div>
-    </section>
+          <article id="contenedorFormAlumnos" class="row" style="display: none;">
+              <h3 class="col-12">Nuevo Alumno: </h3>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                  <input type="text" class="form-control" id="inputNameNuevoAlumn" aria-describedby="Nombre" placeholder="Nombre">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                  <input type="text" class="form-control" id="inputLegNuevoAlumn" aria-describedby="Legajo" placeholder="Legajo">
+      
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <input type="text" class="form-control" id="inputDNINuevoAlumn" aria-describedby="DNI" placeholder="DNI">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <input type="text" class="form-control" id="inputSedeNuevoAlumn" aria-describedby="Sede" placeholder="Sede">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <button type="button" style="margin-left: .2rem" class="btn-export " onclick="cancelAddAlumno()">Cancelar &nbsp;<i class="fa-solid fa-xmark"></i></button>
+                  <button type="button" class="btn-export " onclick="confirmAddAlumno()">Confirmar &nbsp;<i class="fa-regular fa-circle-check"></i></button>
+              </div>
+          </article>
+  
+      </section>
   </main>
 
   <footer class="footer" id="contacto">

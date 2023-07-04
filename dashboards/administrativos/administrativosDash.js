@@ -22,8 +22,46 @@ var profesores = [
     {id: 21, apeNom: "Martín Gimenez", DNI: 26783549, Legajo: 98741, Sede: "Escobar"},
 ]
 
-var mostrarTablaProfes = false;
+var alumnos = [
+    {id: 1, apeNom: "Lucía Fernández", DNI: 43521697, Legajo: 15264, Sede: "Zárate"},
+    {id: 2, apeNom: "Pedro Gómez", DNI: 74920518, Legajo: 86491, Sede: "Campana"},
+    {id: 3, apeNom: "María Rodríguez", DNI: 62158973, Legajo: 24683, Sede: "Escobar"},
+    {id: 4, apeNom: "Luis Pérez", DNI: 97341682, Legajo: 95214, Sede: "Zárate"},
+    {id: 5, apeNom: "Carolina Martínez", DNI: 28649175, Legajo: 37456, Sede: "Campana"},
+    {id: 6, apeNom: "Javier Sánchez", DNI: 53897462, Legajo: 64897, Sede: "Escobar"},
+    {id: 7, apeNom: "Ana López", DNI: 86294157, Legajo: 75963, Sede: "Zárate"},
+    {id: 8, apeNom: "Gabriel Torres", DNI: 72465193, Legajo: 93642, Sede: "Campana"},
+    {id: 9, apeNom: "Florencia González", DNI: 19582674, Legajo: 21536, Sede: "Escobar"},
+    {id: 10, apeNom: "Martín Silva", DNI: 37265948, Legajo: 58642, Sede: "Zárate"},
+    {id: 11, apeNom: "Camila Ramírez", DNI: 61854239, Legajo: 96321, Sede: "Campana"},
+    {id: 12, apeNom: "Andrés Fernández", DNI: 93745826, Legajo: 12479, Sede: "Escobar"},
+    {id: 13, apeNom: "Laura Pérez", DNI: 26547839, Legajo: 45261, Sede: "Zárate"},
+    {id: 14, apeNom: "Gonzalo Mendoza", DNI: 49362718, Legajo: 74261, Sede: "Campana"},
+    {id: 15, apeNom: "Valentina Torres", DNI: 75891632, Legajo: 89647, Sede: "Escobar"},
+    {id: 16, apeNom: "Marcela Rodríguez", DNI: 31657289, Legajo: 32148, Sede: "Zárate"},
+    {id: 17, apeNom: "Sebastián López", DNI: 87654321, Legajo: 56789, Sede: "Campana"},
+    {id: 18, apeNom: "Daniela Sánchez", DNI: 21938547, Legajo: 98756, Sede: "Escobar"},
+    {id: 19, apeNom: "Javier González", DNI: 75129384, Legajo: 65432, Sede: "Zárate"},
+    {id: 20, apeNom: "Carolina Martínez", DNI: 43698527, Legajo: 38746, Sede: "Campana"}
+  ];
 
+var mostrarTablaProfes = false;
+var mostrarTablaAlumno = false;
+
+function verTabProfes() {
+    document.getElementById('alumnos').classList.remove('debo-mostrar-bloque');
+    document.getElementById('profesores').classList.add('debo-mostrar-bloque');
+}
+function verTabAlumnos() {
+    document.getElementById('profesores').classList.remove('debo-mostrar-bloque');
+    document.getElementById('alumnos').classList.add('debo-mostrar-bloque');
+}
+verTabProfes();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////PROFES////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function generarTablaProfes(_algunosProfes){
     
     let contenedorBodyQuali = document.getElementById('body-profes');
@@ -126,3 +164,116 @@ function cancelAddProfe(){
     ocultarFormularioProfe();
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////ALUMNOS////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function generarTablaAlumnos(_algunosAlumnos){
+    
+    let contenedorBodyAlumnos = document.getElementById('body-alumnos');
+
+    contenedorBodyAlumnos.innerHTML = '';
+
+    for (let i = 0; i < _algunosAlumnos.length; i++) {
+        mostrarTablaAlumno = true;
+        let alumno = _algunosAlumnos[i];
+        let trAlumno = document.createElement('tr');
+        let stringTable = '';
+
+        stringTable = stringTable + `<th>${i+1}</th>`;
+        stringTable = stringTable + `<th>${alumno.Legajo}</th>`;
+        stringTable = stringTable + `<th>${alumno.DNI}</th>`;
+        stringTable = stringTable + `<th>${alumno.apeNom}</th>`;
+        stringTable = stringTable + `<th>${alumno.Sede}</th>`;
+
+        trAlumno.innerHTML = stringTable;
+        contenedorBodyAlumnos.appendChild(trAlumno);
+    }
+
+    if (mostrarTablaAlumno) {
+        let _cnt = document.getElementById('contenedorTablaAlumnos');
+        _cnt.classList.add('debo-mostrar');
+    }else{
+        let _cnt = document.getElementById('contenedorTablaAlumnos');
+        _cnt.classList.remove('debo-mostrar');
+    }
+};
+
+function searchAlumnos(){    
+
+    let _cnt = document.getElementById('contenedorTablaAlumnos');
+    _cnt.classList.remove('debo-mostrar');
+    let alumnosFiltrados = alumnos.filter(filtrarAlumno);
+    generarTablaAlumnos(alumnosFiltrados);
+}
+
+function filtrarAlumno(alumno) {
+
+    let _filtros = {
+        legajo: document.getElementById('inputLegAlumn').value,
+        nombre: document.getElementById('inputNameAlumn').value,
+        dni: document.getElementById('inputDNIAlumn').value,
+        sede: document.getElementById('inputSedeAlumn').value,
+    };
+
+    if (_filtros.legajo && alumno.Legajo != _filtros.legajo) {
+      return false;
+    }
+    if (_filtros.nombre && !alumno.apeNom.toLowerCase().includes(_filtros.nombre.toLowerCase())) {
+      return false;
+    }
+    if (_filtros.dni && alumno.DNI != _filtros.dni) {
+      return false;
+    }
+    if (_filtros.sede && alumno.Sede != _filtros.sede) {
+      return false;
+    }
+    return true;
+}
+
+function confirmAddAlumno (){
+
+    let nuevoAlumno = {
+        Legajo: document.getElementById('inputLegNuevoAlumn').value,
+        apeNom: document.getElementById('inputNameNuevoAlumn').value,
+        DNI: document.getElementById('inputDNINuevoAlumn').value,
+        Sede: document.getElementById('inputSedeNuevoAlumn').value,
+    };
+    alumnos.push(nuevoAlumno);
+    clearFormAlumnos();
+    ocultarFormularioAlumno();
+}
+
+function mostrarFormularioAlumno() {
+
+    let _cntTabla = document.getElementById('contenedorTablaAlumnos');
+        _cntTabla.classList.remove('debo-mostrar');
+
+    let _cnt = document.getElementById('contenedorFormAlumnos');
+        _cnt.classList.add('debo-mostrar');
+}
+
+function clearFormAlumnos(){
+    document.getElementById('inputLegNuevoAlumn').value = ''
+    document.getElementById('inputNameNuevoAlumn').value = ''
+    document.getElementById('inputDNINuevoAlumn').value = ''
+    document.getElementById('inputSedeNuevoAlumn').value = ''
+}
+
+function ocultarFormularioAlumno(){
+    let _cnt = document.getElementById('contenedorFormAlumnos');
+        _cnt.classList.remove('debo-mostrar');
+}
+
+function cancelAddAlumno(){
+    clearFormAlumnos();
+    ocultarFormularioAlumno();
+}
+
+
+function closeSession() {
+    sessionStorage.clear();
+    window.location.href = '/login/login.html'
+  }
