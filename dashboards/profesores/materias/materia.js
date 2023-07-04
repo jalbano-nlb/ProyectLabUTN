@@ -146,7 +146,7 @@ function exportToExcel() {
     var link = document.createElement('a');
     link.href = dataType + ',' + encodeURIComponent(xmlContent);
     link.style = 'visibility:hidden';
-    link.download = 'tabla.xls';
+    link.download = 'FichaAlumnos.xls';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -163,7 +163,7 @@ function generateExcelXML(table) {
       xmlContent += '      <ss:Row>\r\n';
       var cells = rows[i].querySelectorAll('td, th');
       for (var j = 0; j < cells.length; j++) {
-        var cellValue = cells[j].innerText;
+        var cellValue = cells[j].textContent;
         xmlContent += '        <ss:Cell>\r\n';
         xmlContent += '          <ss:Data ss:Type="String">' + cellValue + '</ss:Data>\r\n';
         xmlContent += '        </ss:Cell>\r\n';
@@ -179,28 +179,28 @@ function generateExcelXML(table) {
 }
   
 function exportToCSV() {
-var table = document.getElementById("t-qualis");
-var rows = table.getElementsByTagName("tr");
-var csv = [];
+    var table = document.getElementById("t-qualis");
+    var rows = table.getElementsByTagName("tr");
+    var csv = [];
 
-for (var i = 0; i < rows.length; i++) {
-    var row = [], cols = rows[i].querySelectorAll("td, th");
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
 
-    for (var j = 0; j < cols.length; j++)
-    row.push(cols[j].innerText);
+        for (var j = 0; j < cols.length; j++)
+        row.push(cols[j].innerText);
 
-    csv.push(row.join(","));
-}
+        csv.push(row.join(","));
+    }
 
-// Crear un enlace temporal y hacer clic en él
-var csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(csv.join("\n"));
-var link = document.createElement('a');
-link.href = csvContent;
-link.style = 'visibility:hidden';
-link.download = 'tabla.csv';
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
+    // Crear un enlace temporal y hacer clic en él
+    var csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(csv.join("\n"));
+    var link = document.createElement('a');
+    link.href = csvContent;
+    link.style = 'visibility:hidden';
+    link.download = 'tablaAlumnos.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 function volverDash() {
