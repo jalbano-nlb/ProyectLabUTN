@@ -17,7 +17,7 @@ const misCatedras = [
     {id:1, nombre:'Programación III', Modalidad: 'Presencial'},
     {id:2, nombre:'Laboratorio de Programación III', Modalidad: 'Remoto'},
     {id:3, nombre:'Inglés', Modalidad: 'Presencial'},
-    {id:4, nombre:'Base de Datos', Modalidad: 'Remoto'},
+    // {id:4, nombre:'Base de Datos', Modalidad: 'Remoto'},
 ]
 
 function generarCatedras (){

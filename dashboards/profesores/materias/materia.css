@@ -184,13 +184,15 @@ nav {
     border-radius: 1rem;
 }
 
-.btn-export {
-    color: white;
-    border: 1px solid #408d86;
-    background-color: #408d86;
-    border-radius: 1rem;
+.btn-xls:hover{
+  background-color: #7dd4cc;
+  border-color: #7dd4cc;
 }
 
+button:disabled {
+  background-color: #728f9e;
+  border-color: #728f9e;
+}
 
 /* Estilos del formulario */
 form {
