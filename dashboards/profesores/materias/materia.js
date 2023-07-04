@@ -37,6 +37,9 @@ var misAlumnos = [
     {id: 20, apeNom: "Paula Herrera", Notas: [{id: 1, nota: 8}, {id: 2, nota: 7}, {id: 3, nota: 9}, {id: 4, nota: 8}], Regular: true}
 ];
 
+/*utiliza una estructura switch para realizar diferentes acciones dependiendo del valor de materiaSelected. 
+Si materiaSelected es 1, 2 o 3, se cambia el contenido del header con el id 'nombreMateria' y 
+el título del documento HTML.*/
 switch (materiaSelected) {
     case 1:
         document.getElementById('nombreMateria').innerHTML = 'Programacion III';
@@ -58,6 +61,12 @@ switch (materiaSelected) {
 function generarCalificaciones (){
 
     let contenedorHeaders = document.getElementById('header-qualiRow');
+    /*
+        Se inicia un bucle for que recorrerá los elementos del arreglo misCalificativos
+        Dentro del bucle, se crea un nuevo elemento HTML de tipo th (encabezado de tabla) utilizando el método createElement. 
+        El nuevo elemento se guarda en la variable qualyHeader.
+        Se establece el contenido del encabezado de tabla utilizando la propiedad innerHTML del elemento qualyHeader.
+    */
     for (let i = 0; i < misCalificativos.length; i++) {
         let qualyNombre = misCalificativos[i];
         let qualyHeader = document.createElement('th');
@@ -72,6 +81,12 @@ function generarAlumnos (){
 
     let contenedorBodyQuali = document.getElementById('body-quali');
 
+    /*
+        Se inicia un bucle for que recorre todos los elementos del array misAlumnos. 
+        En cada iteración, se obtiene un elemento alumno del array y se crea un nuevo elemento <tr> (fila de la tabla) 
+        utilizando document.createElement('tr').
+        Se declara la variable stringTable como una cadena vacía. Luego se agregan cadenas de texto a stringTable. 
+    */
     for (let i = 0; i < misAlumnos.length; i++) {
         let alumno = misAlumnos[i];
         let trAlumno = document.createElement('tr');
@@ -80,6 +95,11 @@ function generarAlumnos (){
         stringTable = stringTable + `<th>${i+1}</th>`;
         stringTable = stringTable + `<td>${alumno.apeNom}</td>`;
         
+        /*
+            Se inicia otro bucle for que recorre todas las notas del alumno actual (alumno.Notas). 
+            En cada iteración, se obtiene una nota de alumno.Notas y se crea una columna <td> con el valor de la nota. 
+            Se llama a la función modificarNota con los identificadores del alumno y la nota como argumentos cuando se hace clic en la celda. 
+        */
         for (let v = 0; v < alumno.Notas.length; v++) {
             
             let nota = alumno.Notas[v];
@@ -102,6 +122,7 @@ function AskNota(){
     return prompt("Ingrese la calificación deseada");
 }
 
+ /* Esta funcion se llama al clickear en la celda a modificar */
 function modificarNota(alumnoId, notaId){
     let _notaDeseada = AskNota();
     
@@ -109,20 +130,29 @@ function modificarNota(alumnoId, notaId){
 
     if (_validNota >= 1 && _validNota <= 10) {
         
+        /*
+            Se utiliza el método find() en el array misAlumnos para encontrar 
+            el alumno correspondiente al alumnoId proporcionado y se almacena en la variable _foundAlumn 
+        */
         let _foundAlumn = misAlumnos.find(a => a.id == alumnoId);
     
+        /*
+            Se utiliza el forEach() en el array Notas del alumno encontrado
+            para buscar en sus notas y reemplazar la nota que coincida con el notaId proporcionado
+        */
         _foundAlumn.Notas.forEach(n => {
-        if (n.id == notaId) n.nota = _notaDeseada;
+            if (n.id == notaId) n.nota = _notaDeseada;
         });
         let contenedorBodyQuali = document.getElementById('body-quali');
         contenedorBodyQuali.innerHTML = '';
 
+        /* Se llama a generarAlumnos para refrescar la vista */
         generarAlumnos();
     }else if(_notaDeseada == "NC"){
         let _foundAlumn = misAlumnos.find(a => a.id == alumnoId);
     
         _foundAlumn.Notas.forEach(n => {
-        if (n.id == notaId) n.nota = _notaDeseada;
+            if (n.id == notaId) n.nota = _notaDeseada;
         });
         let contenedorBodyQuali = document.getElementById('body-quali');
         contenedorBodyQuali.innerHTML = '';
