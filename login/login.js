@@ -14,7 +14,7 @@ function validarUsuarioPw(){
     let _tipo;
 
     usuarios.forEach(u => {
-        if(u.username == userInput && u.password == pwInput){
+        if(u.username.toLocaleLowerCase() == userInput.toLocaleLowerCase() && u.password == pwInput){
             validaOK = true;
             _user = u.username;
             _pw = u.password;
