@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dashboards/administrativos/administrativosDash.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/60fa674f5d.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 id="nombreUser"></h1>
+  </header>
+  <nav>
+    <button id="btnReq" class="btn-nav" onclick="verTabProfes()"><a href="#profesores">Profesores</a></button>
+    <button id="btnCont" class="btn-nav" onclick="verTabAlumnos()"><a href="#alumnos">Alumnos</a></button>
+    <button id="btnCerrarSess" class="btn-nav" onclick="closeSession()"><i class="fa-solid fa-power-off"></i></button>
+  </nav>
+
+
+  <main>
+    <section id="profesores" style="display: none;">
+      <h2 style="text-align: center;">Profesores</h2>
+      <article class="row">
+        <h3 class="col-12">Filtros Profesores</h3>
+        <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+            <input type="text" class="form-control" id="inputName" aria-describedby="Nombre" placeholder="Nombre">
+        </div>
+        <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+            <input type="text" class="form-control" id="inputLeg" aria-describedby="Legajo" placeholder="Legajo">
+
+        </div>
+        <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+            <input type="text" class="form-control" id="inputDNI" aria-describedby="DNI" placeholder="DNI">
+        </div>
+        <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+            <input type="text" class="form-control" id="inputSede" aria-describedby="Sede" placeholder="Sede">
+        </div>
+        <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+            <button type="button" style="margin-left: .2rem" class="btn-export " onclick="mostrarFormularioProfe()">Nuevo &nbsp;<i class="fa-solid fa-plus"></i></button>
+            <button type="button" class="btn-export " onclick="searchProfes()">Buscar &nbsp;<i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </article>
+
+      <div class="row" id="contenedorTablaProfes" style="display: none;">
+        <table id="t-profes" class="table table-striped table-hover">
+            <thead>
+                <tr id="header-profesRow">
+                  <th scope="col">#</th>
+                  <th scope="col">Legajo</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Sede</th>
+                </tr>
+            </thead>
+            <tbody id="body-profes">
+                <!-- SE CARGA AUTO -->
+            </tbody>
+        </table>
+      </div>
+
+      
+        <article id="contenedorFormProfes" class="row" style="display: none;">
+            <h3 class="col-12">Nuevo Profesor: </h3>
+            <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                <input type="text" class="form-control" id="inputNameNuevo" aria-describedby="Nombre" placeholder="Nombre">
+            </div>
+            <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                <input type="text" class="form-control" id="inputLegNuevo" aria-describedby="Legajo" placeholder="Legajo">
+    
+            </div>
+            <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                <input type="text" class="form-control" id="inputDNINuevo" aria-describedby="DNI" placeholder="DNI">
+            </div>
+            <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                <input type="text" class="form-control" id="inputSedeNuevo" aria-describedby="Sede" placeholder="Sede">
+            </div>
+            <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                <button type="button" style="margin-left: .2rem" class="btn-export " onclick="cancelAddProfe()">Cancelar &nbsp;<i class="fa-solid fa-xmark"></i></button>
+                <button type="button" class="btn-export " onclick="confirmAddProfe()">Confirmar &nbsp;<i class="fa-regular fa-circle-check"></i></button>
+            </div>
+        </article>
+
+    </section>
+
+    <section id="alumnos" style="display: none;">
+        <h2 style="text-align: center;">Alumnos</h2>
+        <article class="row">
+          <h3 class="col-12">Filtros Alumnos</h3>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+              <input type="text" class="form-control" id="inputNameAlumn" aria-describedby="Nombre" placeholder="Nombre">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+              <input type="text" class="form-control" id="inputLegAlumn" aria-describedby="Legajo" placeholder="Legajo">
+  
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <input type="text" class="form-control" id="inputDNIAlumn" aria-describedby="DNI" placeholder="DNI">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <input type="text" class="form-control" id="inputSedeAlumn" aria-describedby="Sede" placeholder="Sede">
+          </div>
+          <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+              <button type="button" style="margin-left: .2rem" class="btn-export " onclick="mostrarFormularioAlumno()">Nuevo &nbsp;<i class="fa-solid fa-plus"></i></button>
+              <button type="button" class="btn-export " onclick="searchAlumnos()">Buscar &nbsp;<i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </article>
+  
+        <div class="row" id="contenedorTablaAlumnos" style="display: none;">
+          <table id="t-alumnos" class="table table-striped table-hover">
+              <thead>
+                  <tr id="header-alumnosRow">
+                    <th scope="col">#</th>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Sede</th>
+                  </tr>
+              </thead>
+              <tbody id="body-alumnos">
+                  <!-- SE CARGA AUTO -->
+              </tbody>
+          </table>
+        </div>
+  
+        
+          <article id="contenedorFormAlumnos" class="row" style="display: none;">
+              <h3 class="col-12">Nuevo Alumno: </h3>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                  <input type="text" class="form-control" id="inputNameNuevoAlumn" aria-describedby="Nombre" placeholder="Nombre">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-3">
+                  <input type="text" class="form-control" id="inputLegNuevoAlumn" aria-describedby="Legajo" placeholder="Legajo">
+      
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <input type="text" class="form-control" id="inputDNINuevoAlumn" aria-describedby="DNI" placeholder="DNI">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <input type="text" class="form-control" id="inputSedeNuevoAlumn" aria-describedby="Sede" placeholder="Sede">
+              </div>
+              <div class="divInputFilter col-sm-12 col-md-6 col-lg-2">
+                  <button type="button" style="margin-left: .2rem" class="btn-export " onclick="cancelAddAlumno()">Cancelar &nbsp;<i class="fa-solid fa-xmark"></i></button>
+                  <button type="button" class="btn-export " onclick="confirmAddAlumno()">Confirmar &nbsp;<i class="fa-regular fa-circle-check"></i></button>
+              </div>
+          </article>
+  
+      </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="footer-section">
+      <h4>Enlaces UTN</h4>
+      <ul>
+        <li><a href="https://www.frgp.utn.edu.ar/alumnos/office365">Office 365</a></li>
+        <li><a href="https://elibro.net/es/lc/utnfrd/inicio/">eLibro</a></li>
+        <li><a href="https://ria.utn.edu.ar/">RIA</a></li>
+        <li><a href="http://portal.bibliotecas.utn.edu.ar/login">Bibliotecas Electronicas</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Email: FRD@UTN.com</a></li>
+        <li><a href="#">Teléfono: +54 11 5371 5600</a></li>
+        <li><a href="#">Dirección:Buenos Aires, Sarmiento 440 (C1041AAJ)</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="/dashboards/administrativos/administrativosDash.js"></script>
+</body>
+
+</html>

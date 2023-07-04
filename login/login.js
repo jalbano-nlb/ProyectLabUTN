@@ -1,6 +1,6 @@
 const usuarios = [
     {username: 'jalbano', password: '2323', apellidoNombre: 'Albano, Joaquín', tipo: 1},
-    {username: 'ivalerio', password: '2323', apellidoNombre: 'Valerio, Ignacio', tipo: 1},
+    {username: 'ivalerio', password: '2323', apellidoNombre: 'Valerio, Ignacio', tipo: 3},
     {username: 'mbonu', password: '2323', apellidoNombre: 'Bonuccelli, Martín', tipo: 2},
 ];
 
@@ -42,6 +42,8 @@ function login(type){
         var urlRedireccion = '/dashboards/alumnos/alumnosDash.html'
     }else if (type ==2){
         var urlRedireccion = '/dashboards/profesores/profesoresDash.html'
+    }else if (type == 3){
+        var urlRedireccion = '/dashboards/administrativos/administrativosDash.html'
     }
 
     window.location.href = urlRedireccion;
