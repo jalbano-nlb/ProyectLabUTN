@@ -1,3 +1,8 @@
+/*En esta línea se declara una constante userInfo que es un objeto. 
+Este objeto se inicializa con tres propiedades: username, type y apeNom. 
+Cada propiedad obtiene su valor correspondiente utilizando el método getItem de sessionStorage, 
+que obtiene los valores almacenados en el almacenamiento de sesión del navegador. 
+Estos valores se obtienen utilizando las claves 'usr', 'type' y 'apellidoNombre'. */
 const userInfo = {
     username: sessionStorage.getItem('usr'),
     type: sessionStorage.getItem('type'),
@@ -14,9 +19,15 @@ const misCatedras = [
     // {id:4, nombre:'Base de Datos', Modalidad: 'Remoto'},
 ]
 
+/*Se define una función llamada generarCatedras que no tiene argumentos. 
+Esta función genera dinámicamente las cards del HTML para mostrar las cátedras en el documento. 
+Luego, se llama a esta función generarCatedras() para que se ejecute y muestre las cátedras en la página.*/
 function generarCatedras (){
 
     let contenedorCatedras = document.getElementById('contenedor-catedras');
+
+    /*Este bucle for recorre cada elemento en el array misCatedras. En cada iteración, se crea un nuevo elemento <div> 
+    utilizando document.createElement('div') y se asigna a la variable divCatedra. */
     for (let i = 0; i < misCatedras.length; i++) {
         let catedra = misCatedras[i];
         let divCatedra = document.createElement('div');
@@ -25,6 +36,12 @@ function generarCatedras (){
         divCatedra.style.minWidth = '15rem';
         divCatedra.style.textAlign = 'center';
       
+
+        /*se establece el contenido HTML del elemento divCatedra. Se utiliza una sintaxis de plantilla de cadena (template string)
+        para crear el contenido con marcadores de posición ${} para acceder a las propiedades de la cátedra actual. 
+        Dentro del contenido HTML, se muestran el nombre y la modalidad de la cátedra mediante ${catedra.nombre} y 
+        ${catedra.Modalidad} respectivamente. Además, se agrega un botón "Ingresar" 
+        con el atributo onclick que llama a la función ingresarMateria() pasando el id de la cátedra actual.*/
         divCatedra.innerHTML = `
           <div class="row" style="">
             <div class="col-12">
@@ -43,6 +60,7 @@ function generarCatedras (){
 }
 generarCatedras();
 
+/*Esta función se llama cuando se hace clic en el botón "Ingresar" en una de las tarjetas de cátedra*/
 function ingresarMateria(idMateria) {    
     sessionStorage.setItem('materiaSelected', idMateria);
     
