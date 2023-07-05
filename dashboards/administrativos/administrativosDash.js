@@ -48,6 +48,11 @@ var alumnos = [
 var mostrarTablaProfes = false;
 var mostrarTablaAlumno = false;
 
+/* 
+    En la funciones verTabs se oculta o muestra según corresponda los elementos correspondientes
+    Se ejecuta esta función al clickear en los tabs y así mostrar la info deseada.
+    Por defecto, empezamos forzando la visualización de verTabProfes
+*/
 function verTabProfes() {
     document.getElementById('alumnos').classList.remove('debo-mostrar-bloque');
     document.getElementById('profesores').classList.add('debo-mostrar-bloque');
@@ -68,6 +73,11 @@ function generarTablaProfes(_algunosProfes){
 
     contenedorBodyQuali.innerHTML = '';
 
+    /*
+        Este bucle for recorre cada elemento en el parámetro recibido _algunosProfes. En cada iteración, se crea un nuevo elemento <tr> 
+        utilizando document.createElement('tr') y se asigna a la variable trProfe. 
+        Se completa la tabla con la variable stringTable con los datos correspondientes de cada profesor en un th
+    */
     for (let i = 0; i < _algunosProfes.length; i++) {
         mostrarTablaProfes = true;
         let profesor = _algunosProfes[i];
@@ -84,6 +94,10 @@ function generarTablaProfes(_algunosProfes){
         contenedorBodyQuali.appendChild(trProfe);
     }
 
+    /* 
+        Si encontró algún profesor con los parámetros recibidos, entonces muestra el div con la tabla
+        de lo contrario, no la muestra (en caso de que ya esté visible, la oculta.)
+     */
     if (mostrarTablaProfes) {
         let _cnt = document.getElementById('contenedorTablaProfes');
         _cnt.classList.add('debo-mostrar');
@@ -95,14 +109,17 @@ function generarTablaProfes(_algunosProfes){
 
 function searchProfes(){    
 
+    /* Comienzo ocultando la tabla para luego evaluar si mostrarla o no en la funcion generarTablaProfes() */
     let _cnt = document.getElementById('contenedorTablaProfes');
     _cnt.classList.remove('debo-mostrar');
+    /* Se busca dentro del array profesores mediante el método .filer() enviando como parámetro la funcion filtrarProfesor*/
     let profesFiltrados = profesores.filter(filtrarProfesor);
     generarTablaProfes(profesFiltrados);
 }
 
 function filtrarProfesor(profesor) {
 
+    // cargo en una variable todos los filtros seleccionados
     let _filtros = {
         legajo: document.getElementById('inputLeg').value,
         nombre: document.getElementById('inputName').value,
@@ -110,6 +127,7 @@ function filtrarProfesor(profesor) {
         sede: document.getElementById('inputSede').value,
     };
 
+    // en caso de que no encuentre coincidencia retorno false lo que NO será agregado a la respuesta
     if (_filtros.legajo && profesor.Legajo != _filtros.legajo) {
       return false;
     }
@@ -127,17 +145,22 @@ function filtrarProfesor(profesor) {
 
 function confirmAddProfe (){
 
+    // cargo en una variable todos los datos ingresados para dar el alta
     let nuevoProfe = {
         Legajo: document.getElementById('inputLegNuevo').value,
         apeNom: document.getElementById('inputNameNuevo').value,
         DNI: document.getElementById('inputDNINuevo').value,
         Sede: document.getElementById('inputSedeNuevo').value,
     };
+
+    //Se agrega al array profesores el nuevo profesor ingresado
     profesores.push(nuevoProfe);
     clearFormProfes();
     ocultarFormularioProfe();
 }
 
+/* Esta función es llamada al clickear NUEVO en los filtros de profesores
+    Ocultará la tabla de busqueda y mostrará el formulario de alta. */
 function mostrarFormularioProfe() {
 
     let _cntTabla = document.getElementById('contenedorTablaProfes');
@@ -176,6 +199,11 @@ function generarTablaAlumnos(_algunosAlumnos){
 
     contenedorBodyAlumnos.innerHTML = '';
 
+    /*
+        Este bucle for recorre cada elemento en el parámetro recibido _algunosAlumnos. En cada iteración, se crea un nuevo elemento <tr> 
+        utilizando document.createElement('tr') y se asigna a la variable trAlumno. 
+        Se completa la tabla con la variable stringTable con los datos correspondientes de cada alumno en un th
+    */
     for (let i = 0; i < _algunosAlumnos.length; i++) {
         mostrarTablaAlumno = true;
         let alumno = _algunosAlumnos[i];
@@ -192,6 +220,10 @@ function generarTablaAlumnos(_algunosAlumnos){
         contenedorBodyAlumnos.appendChild(trAlumno);
     }
 
+    /* 
+        Si encontró algún alumno con los parámetros recibidos, entonces muestra el div con la tabla
+        de lo contrario, no la muestra (en caso de que ya esté visible, la oculta.)
+     */
     if (mostrarTablaAlumno) {
         let _cnt = document.getElementById('contenedorTablaAlumnos');
         _cnt.classList.add('debo-mostrar');
@@ -203,14 +235,17 @@ function generarTablaAlumnos(_algunosAlumnos){
 
 function searchAlumnos(){    
 
+    /* Comienzo ocultando la tabla para luego evaluar si mostrarla o no en la funcion generarTablaAlumnos() */
     let _cnt = document.getElementById('contenedorTablaAlumnos');
     _cnt.classList.remove('debo-mostrar');
+    /* Se busca dentro del array alumnos mediante el método .filer() enviando como parámetro la funcion filtrarAluno*/
     let alumnosFiltrados = alumnos.filter(filtrarAlumno);
     generarTablaAlumnos(alumnosFiltrados);
 }
 
 function filtrarAlumno(alumno) {
 
+    // cargo en una variable todos los filtros seleccionados
     let _filtros = {
         legajo: document.getElementById('inputLegAlumn').value,
         nombre: document.getElementById('inputNameAlumn').value,
@@ -218,6 +253,7 @@ function filtrarAlumno(alumno) {
         sede: document.getElementById('inputSedeAlumn').value,
     };
 
+    // en caso de que no encuentre coincidencia retorno false lo que NO será agregado a la respuesta
     if (_filtros.legajo && alumno.Legajo != _filtros.legajo) {
       return false;
     }
@@ -235,17 +271,21 @@ function filtrarAlumno(alumno) {
 
 function confirmAddAlumno (){
 
+    // cargo en una variable todos los datos ingresados para dar el alta
     let nuevoAlumno = {
         Legajo: document.getElementById('inputLegNuevoAlumn').value,
         apeNom: document.getElementById('inputNameNuevoAlumn').value,
         DNI: document.getElementById('inputDNINuevoAlumn').value,
         Sede: document.getElementById('inputSedeNuevoAlumn').value,
     };
+    //Se agrega al array alumnos el nuevo profesor ingresado
     alumnos.push(nuevoAlumno);
     clearFormAlumnos();
     ocultarFormularioAlumno();
 }
 
+/* Esta función es llamada al clickear NUEVO en los filtros de alumnos
+    Ocultará la tabla de busqueda y mostrará el formulario de alta. */
 function mostrarFormularioAlumno() {
 
     let _cntTabla = document.getElementById('contenedorTablaAlumnos');
