@@ -32,6 +32,9 @@ var asistencia = [
     {id:6, asiste: ''}
 ]
 
+/*utiliza una estructura switch para realizar diferentes acciones dependiendo del valor de materiaSelected. 
+Si materiaSelected es 1, 2 o 3, se cambia el contenido del header con el id 'nombreMateria' y 
+el título del documento HTML.*/
 switch (materiaSelected) {
     case 1:
         document.getElementById('nombreMateria').innerHTML = 'Programacion III';
@@ -62,6 +65,7 @@ switch (materiaSelected) {
         break;
 }
 
+/*Genera la info desde el array infoMaterias y la añade al panel lateral con id 'contenidos'*/
 function generarInfoCatedras(IDMateria){
 
     let contenedorIntro = document.getElementById('contenidos');
@@ -72,6 +76,7 @@ function generarInfoCatedras(IDMateria){
     contenedorIntro.appendChild(pInfoCatedra);
 }
 
+/*Genera los horarios desde el array infoMaterias y la añade al panel lateral con id 'horarios'*/
 function generarHorariosCatedras(IDMateria) {
 
     let contenedorHorario = document.getElementById('horarios');
@@ -82,6 +87,7 @@ function generarHorariosCatedras(IDMateria) {
     contenedorHorario.appendChild(pHSCatedra);
 }
 
+/*Genera las calificaciones desde el array infoMaterias y la añade al panel lateral con id 'notas'*/
 function generarCalificaciones(IDMateria) {
     
     let contenedorNotas = document.getElementById('notas');
@@ -96,6 +102,11 @@ function generarCalificaciones(IDMateria) {
 
 }
 
+/* 
+    Genera  las cartas de la cantidad de clases según el array asistencia
+    En el switch se le da el estilo (verde-amarillo-rojo) según la asistencia o no del alumno
+    dado por el valor P = Presente, A = Ausente, y en '' = clase a dar proximamente
+*/
 function generarClases(IDMateria){
     
     let contenedorClases = document.getElementById('listaClases');
